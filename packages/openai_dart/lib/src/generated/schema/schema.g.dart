@@ -347,6 +347,7 @@ _$CreateChatCompletionRequestImpl _$$CreateChatCompletionRequestImplFromJson(
       functions: (json['functions'] as List<dynamic>?)
           ?.map((e) => FunctionObject.fromJson(e as Map<String, dynamic>))
           .toList(),
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$CreateChatCompletionRequestImplToJson(
@@ -393,6 +394,7 @@ Map<String, dynamic> _$$CreateChatCompletionRequestImplToJson(
           .toJson(instance.functionCall));
   writeNotNull(
       'functions', instance.functions?.map((e) => e.toJson()).toList());
+  writeNotNull('metadata', instance.metadata);
   return val;
 }
 

@@ -3713,6 +3713,10 @@ mixin _$CreateChatCompletionRequest {
   @JsonKey(includeIfNull: false)
   List<FunctionObject>? get functions => throw _privateConstructorUsedError;
 
+  /// extra request body
+  @JsonKey(includeIfNull: false)
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+
   /// Serializes this CreateChatCompletionRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -3772,7 +3776,8 @@ abstract class $CreateChatCompletionRequestCopyWith<$Res> {
       @_ChatCompletionFunctionCallConverter()
       @JsonKey(name: 'function_call', includeIfNull: false)
       ChatCompletionFunctionCall? functionCall,
-      @JsonKey(includeIfNull: false) List<FunctionObject>? functions});
+      @JsonKey(includeIfNull: false) List<FunctionObject>? functions,
+      @JsonKey(includeIfNull: false) Map<String, dynamic>? metadata});
 
   $ChatCompletionModelCopyWith<$Res> get model;
   $ResponseFormatCopyWith<$Res>? get responseFormat;
@@ -3822,6 +3827,7 @@ class _$CreateChatCompletionRequestCopyWithImpl<$Res,
     Object? user = freezed,
     Object? functionCall = freezed,
     Object? functions = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_value.copyWith(
       model: null == model
@@ -3920,6 +3926,10 @@ class _$CreateChatCompletionRequestCopyWithImpl<$Res,
           ? _value.functions
           : functions // ignore: cast_nullable_to_non_nullable
               as List<FunctionObject>?,
+      metadata: freezed == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -4057,7 +4067,8 @@ abstract class _$$CreateChatCompletionRequestImplCopyWith<$Res>
       @_ChatCompletionFunctionCallConverter()
       @JsonKey(name: 'function_call', includeIfNull: false)
       ChatCompletionFunctionCall? functionCall,
-      @JsonKey(includeIfNull: false) List<FunctionObject>? functions});
+      @JsonKey(includeIfNull: false) List<FunctionObject>? functions,
+      @JsonKey(includeIfNull: false) Map<String, dynamic>? metadata});
 
   @override
   $ChatCompletionModelCopyWith<$Res> get model;
@@ -4112,6 +4123,7 @@ class __$$CreateChatCompletionRequestImplCopyWithImpl<$Res>
     Object? user = freezed,
     Object? functionCall = freezed,
     Object? functions = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_$CreateChatCompletionRequestImpl(
       model: null == model
@@ -4210,6 +4222,10 @@ class __$$CreateChatCompletionRequestImplCopyWithImpl<$Res>
           ? _value._functions
           : functions // ignore: cast_nullable_to_non_nullable
               as List<FunctionObject>?,
+      metadata: freezed == metadata
+          ? _value._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -4255,11 +4271,13 @@ class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
       @_ChatCompletionFunctionCallConverter()
       @JsonKey(name: 'function_call', includeIfNull: false)
       this.functionCall,
-      @JsonKey(includeIfNull: false) final List<FunctionObject>? functions})
+      @JsonKey(includeIfNull: false) final List<FunctionObject>? functions,
+      @JsonKey(includeIfNull: false) final Map<String, dynamic>? metadata})
       : _messages = messages,
         _logitBias = logitBias,
         _tools = tools,
         _functions = functions,
+        _metadata = metadata,
         super._();
 
   factory _$CreateChatCompletionRequestImpl.fromJson(
@@ -4513,9 +4531,23 @@ class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
     return EqualUnmodifiableListView(value);
   }
 
+  /// extra request body
+  final Map<String, dynamic>? _metadata;
+
+  /// extra request body
+  @override
+  @JsonKey(includeIfNull: false)
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'CreateChatCompletionRequest(model: $model, messages: $messages, frequencyPenalty: $frequencyPenalty, logitBias: $logitBias, logprobs: $logprobs, topLogprobs: $topLogprobs, maxTokens: $maxTokens, maxCompletionTokens: $maxCompletionTokens, n: $n, presencePenalty: $presencePenalty, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, topP: $topP, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, user: $user, functionCall: $functionCall, functions: $functions)';
+    return 'CreateChatCompletionRequest(model: $model, messages: $messages, frequencyPenalty: $frequencyPenalty, logitBias: $logitBias, logprobs: $logprobs, topLogprobs: $topLogprobs, maxTokens: $maxTokens, maxCompletionTokens: $maxCompletionTokens, n: $n, presencePenalty: $presencePenalty, responseFormat: $responseFormat, seed: $seed, serviceTier: $serviceTier, stop: $stop, stream: $stream, streamOptions: $streamOptions, temperature: $temperature, topP: $topP, tools: $tools, toolChoice: $toolChoice, parallelToolCalls: $parallelToolCalls, user: $user, functionCall: $functionCall, functions: $functions, metadata: $metadata)';
   }
 
   @override
@@ -4561,7 +4593,8 @@ class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
             (identical(other.functionCall, functionCall) ||
                 other.functionCall == functionCall) &&
             const DeepCollectionEquality()
-                .equals(other._functions, _functions));
+                .equals(other._functions, _functions) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -4591,7 +4624,8 @@ class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
         parallelToolCalls,
         user,
         functionCall,
-        const DeepCollectionEquality().hash(_functions)
+        const DeepCollectionEquality().hash(_functions),
+        const DeepCollectionEquality().hash(_metadata)
       ]);
 
   /// Create a copy of CreateChatCompletionRequest
@@ -4656,9 +4690,10 @@ abstract class _CreateChatCompletionRequest
       @_ChatCompletionFunctionCallConverter()
       @JsonKey(name: 'function_call', includeIfNull: false)
       final ChatCompletionFunctionCall? functionCall,
+      @JsonKey(includeIfNull: false) final List<FunctionObject>? functions,
       @JsonKey(includeIfNull: false)
-      final List<FunctionObject>?
-          functions}) = _$CreateChatCompletionRequestImpl;
+      final Map<String, dynamic>?
+          metadata}) = _$CreateChatCompletionRequestImpl;
   const _CreateChatCompletionRequest._() : super._();
 
   factory _CreateChatCompletionRequest.fromJson(Map<String, dynamic> json) =
@@ -4865,6 +4900,11 @@ abstract class _CreateChatCompletionRequest
   @override
   @JsonKey(includeIfNull: false)
   List<FunctionObject>? get functions;
+
+  /// extra request body
+  @override
+  @JsonKey(includeIfNull: false)
+  Map<String, dynamic>? get metadata;
 
   /// Create a copy of CreateChatCompletionRequest
   /// with the given fields replaced by the non-null parameter values.
