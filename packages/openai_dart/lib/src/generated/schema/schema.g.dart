@@ -347,6 +347,7 @@ _$CreateChatCompletionRequestImpl _$$CreateChatCompletionRequestImplFromJson(
       functions: (json['functions'] as List<dynamic>?)
           ?.map((e) => FunctionObject.fromJson(e as Map<String, dynamic>))
           .toList(),
+      metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$CreateChatCompletionRequestImplToJson(
@@ -393,6 +394,7 @@ Map<String, dynamic> _$$CreateChatCompletionRequestImplToJson(
           .toJson(instance.functionCall));
   writeNotNull(
       'functions', instance.functions?.map((e) => e.toJson()).toList());
+  writeNotNull('metadata', instance.metadata);
   return val;
 }
 
@@ -903,6 +905,8 @@ _$CreateChatCompletionStreamResponseImpl
           usage: json['usage'] == null
               ? null
               : CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
+          assistantMessageId: json['assistant_message_id'] as String?,
+          userMessageId: json['user_message_id'] as String?,
         );
 
 Map<String, dynamic> _$$CreateChatCompletionStreamResponseImplToJson(
@@ -923,6 +927,8 @@ Map<String, dynamic> _$$CreateChatCompletionStreamResponseImplToJson(
   writeNotNull('system_fingerprint', instance.systemFingerprint);
   writeNotNull('object', instance.object);
   writeNotNull('usage', instance.usage?.toJson());
+  writeNotNull('assistant_message_id', instance.assistantMessageId);
+  writeNotNull('user_message_id', instance.userMessageId);
   return val;
 }
 

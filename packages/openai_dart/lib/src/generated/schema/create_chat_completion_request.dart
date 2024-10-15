@@ -183,6 +183,10 @@ class CreateChatCompletionRequest with _$CreateChatCompletionRequest {
     ///
     /// A list of functions the model may generate JSON inputs for.
     @JsonKey(includeIfNull: false) List<FunctionObject>? functions,
+
+    /// extra request body data
+    /// Map representation of object
+    @JsonKey(includeIfNull: false) Map<String, dynamic>? metadata,
   }) = _CreateChatCompletionRequest;
 
   /// Object construction from a JSON representation
