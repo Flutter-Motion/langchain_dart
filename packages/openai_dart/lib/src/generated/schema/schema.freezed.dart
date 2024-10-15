@@ -3713,7 +3713,8 @@ mixin _$CreateChatCompletionRequest {
   @JsonKey(includeIfNull: false)
   List<FunctionObject>? get functions => throw _privateConstructorUsedError;
 
-  /// extra request body
+  /// extra request body data
+  /// Map representation of object
   @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
 
@@ -4531,10 +4532,12 @@ class _$CreateChatCompletionRequestImpl extends _CreateChatCompletionRequest {
     return EqualUnmodifiableListView(value);
   }
 
-  /// extra request body
+  /// extra request body data
+  /// Map representation of object
   final Map<String, dynamic>? _metadata;
 
-  /// extra request body
+  /// extra request body data
+  /// Map representation of object
   @override
   @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get metadata {
@@ -4901,7 +4904,8 @@ abstract class _CreateChatCompletionRequest
   @JsonKey(includeIfNull: false)
   List<FunctionObject>? get functions;
 
-  /// extra request body
+  /// extra request body data
+  /// Map representation of object
   @override
   @JsonKey(includeIfNull: false)
   Map<String, dynamic>? get metadata;
@@ -9989,6 +9993,14 @@ mixin _$CreateChatCompletionStreamResponse {
   @JsonKey(includeIfNull: false)
   CompletionUsage? get usage => throw _privateConstructorUsedError;
 
+  /// The id on supabase of the assistant message response
+  @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+  String? get assistantMessageId => throw _privateConstructorUsedError;
+
+  /// The id on supabase of the user message that triggered the ai response
+  @JsonKey(includeIfNull: false, name: 'user_message_id')
+  String? get userMessageId => throw _privateConstructorUsedError;
+
   /// Serializes this CreateChatCompletionStreamResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -10021,7 +10033,11 @@ abstract class $CreateChatCompletionStreamResponseCopyWith<$Res> {
       @JsonKey(name: 'system_fingerprint', includeIfNull: false)
       String? systemFingerprint,
       @JsonKey(includeIfNull: false) String? object,
-      @JsonKey(includeIfNull: false) CompletionUsage? usage});
+      @JsonKey(includeIfNull: false) CompletionUsage? usage,
+      @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+      String? assistantMessageId,
+      @JsonKey(includeIfNull: false, name: 'user_message_id')
+      String? userMessageId});
 
   $CompletionUsageCopyWith<$Res>? get usage;
 }
@@ -10050,6 +10066,8 @@ class _$CreateChatCompletionStreamResponseCopyWithImpl<$Res,
     Object? systemFingerprint = freezed,
     Object? object = freezed,
     Object? usage = freezed,
+    Object? assistantMessageId = freezed,
+    Object? userMessageId = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -10084,6 +10102,14 @@ class _$CreateChatCompletionStreamResponseCopyWithImpl<$Res,
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as CompletionUsage?,
+      assistantMessageId: freezed == assistantMessageId
+          ? _value.assistantMessageId
+          : assistantMessageId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userMessageId: freezed == userMessageId
+          ? _value.userMessageId
+          : userMessageId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -10124,7 +10150,11 @@ abstract class _$$CreateChatCompletionStreamResponseImplCopyWith<$Res>
       @JsonKey(name: 'system_fingerprint', includeIfNull: false)
       String? systemFingerprint,
       @JsonKey(includeIfNull: false) String? object,
-      @JsonKey(includeIfNull: false) CompletionUsage? usage});
+      @JsonKey(includeIfNull: false) CompletionUsage? usage,
+      @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+      String? assistantMessageId,
+      @JsonKey(includeIfNull: false, name: 'user_message_id')
+      String? userMessageId});
 
   @override
   $CompletionUsageCopyWith<$Res>? get usage;
@@ -10153,6 +10183,8 @@ class __$$CreateChatCompletionStreamResponseImplCopyWithImpl<$Res>
     Object? systemFingerprint = freezed,
     Object? object = freezed,
     Object? usage = freezed,
+    Object? assistantMessageId = freezed,
+    Object? userMessageId = freezed,
   }) {
     return _then(_$CreateChatCompletionStreamResponseImpl(
       id: freezed == id
@@ -10187,6 +10219,14 @@ class __$$CreateChatCompletionStreamResponseImplCopyWithImpl<$Res>
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as CompletionUsage?,
+      assistantMessageId: freezed == assistantMessageId
+          ? _value.assistantMessageId
+          : assistantMessageId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userMessageId: freezed == userMessageId
+          ? _value.userMessageId
+          : userMessageId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -10208,7 +10248,11 @@ class _$CreateChatCompletionStreamResponseImpl
       @JsonKey(name: 'system_fingerprint', includeIfNull: false)
       this.systemFingerprint,
       @JsonKey(includeIfNull: false) this.object,
-      @JsonKey(includeIfNull: false) this.usage})
+      @JsonKey(includeIfNull: false) this.usage,
+      @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+      this.assistantMessageId,
+      @JsonKey(includeIfNull: false, name: 'user_message_id')
+      this.userMessageId})
       : _choices = choices,
         super._();
 
@@ -10270,9 +10314,19 @@ class _$CreateChatCompletionStreamResponseImpl
   @JsonKey(includeIfNull: false)
   final CompletionUsage? usage;
 
+  /// The id on supabase of the assistant message response
+  @override
+  @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+  final String? assistantMessageId;
+
+  /// The id on supabase of the user message that triggered the ai response
+  @override
+  @JsonKey(includeIfNull: false, name: 'user_message_id')
+  final String? userMessageId;
+
   @override
   String toString() {
-    return 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage)';
+    return 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage, assistantMessageId: $assistantMessageId, userMessageId: $userMessageId)';
   }
 
   @override
@@ -10289,7 +10343,11 @@ class _$CreateChatCompletionStreamResponseImpl
             (identical(other.systemFingerprint, systemFingerprint) ||
                 other.systemFingerprint == systemFingerprint) &&
             (identical(other.object, object) || other.object == object) &&
-            (identical(other.usage, usage) || other.usage == usage));
+            (identical(other.usage, usage) || other.usage == usage) &&
+            (identical(other.assistantMessageId, assistantMessageId) ||
+                other.assistantMessageId == assistantMessageId) &&
+            (identical(other.userMessageId, userMessageId) ||
+                other.userMessageId == userMessageId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10303,7 +10361,9 @@ class _$CreateChatCompletionStreamResponseImpl
       serviceTier,
       systemFingerprint,
       object,
-      usage);
+      usage,
+      assistantMessageId,
+      userMessageId);
 
   /// Create a copy of CreateChatCompletionStreamResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -10326,20 +10386,23 @@ class _$CreateChatCompletionStreamResponseImpl
 abstract class _CreateChatCompletionStreamResponse
     extends CreateChatCompletionStreamResponse {
   const factory _CreateChatCompletionStreamResponse(
-          {@JsonKey(includeIfNull: false) final String? id,
-          required final List<ChatCompletionStreamResponseChoice> choices,
-          @JsonKey(includeIfNull: false) final int? created,
-          @JsonKey(includeIfNull: false) final String? model,
-          @JsonKey(
-              name: 'service_tier',
-              includeIfNull: false,
-              unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-          final ServiceTier? serviceTier,
-          @JsonKey(name: 'system_fingerprint', includeIfNull: false)
-          final String? systemFingerprint,
-          @JsonKey(includeIfNull: false) final String? object,
-          @JsonKey(includeIfNull: false) final CompletionUsage? usage}) =
-      _$CreateChatCompletionStreamResponseImpl;
+      {@JsonKey(includeIfNull: false) final String? id,
+      required final List<ChatCompletionStreamResponseChoice> choices,
+      @JsonKey(includeIfNull: false) final int? created,
+      @JsonKey(includeIfNull: false) final String? model,
+      @JsonKey(
+          name: 'service_tier',
+          includeIfNull: false,
+          unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+      final ServiceTier? serviceTier,
+      @JsonKey(name: 'system_fingerprint', includeIfNull: false)
+      final String? systemFingerprint,
+      @JsonKey(includeIfNull: false) final String? object,
+      @JsonKey(includeIfNull: false) final CompletionUsage? usage,
+      @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+      final String? assistantMessageId,
+      @JsonKey(includeIfNull: false, name: 'user_message_id')
+      final String? userMessageId}) = _$CreateChatCompletionStreamResponseImpl;
   const _CreateChatCompletionStreamResponse._() : super._();
 
   factory _CreateChatCompletionStreamResponse.fromJson(
@@ -10391,6 +10454,16 @@ abstract class _CreateChatCompletionStreamResponse
   @override
   @JsonKey(includeIfNull: false)
   CompletionUsage? get usage;
+
+  /// The id on supabase of the assistant message response
+  @override
+  @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+  String? get assistantMessageId;
+
+  /// The id on supabase of the user message that triggered the ai response
+  @override
+  @JsonKey(includeIfNull: false, name: 'user_message_id')
+  String? get userMessageId;
 
   /// Create a copy of CreateChatCompletionStreamResponse
   /// with the given fields replaced by the non-null parameter values.

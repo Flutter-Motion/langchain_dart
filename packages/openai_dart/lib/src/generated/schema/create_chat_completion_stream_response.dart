@@ -35,25 +35,29 @@ class CreateChatCompletionStreamResponse
       name: 'service_tier',
       includeIfNull: false,
       unknownEnumValue: JsonKey.nullForUndefinedEnumValue,
-    )
-    ServiceTier? serviceTier,
+    ) ServiceTier? serviceTier,
 
     /// This fingerprint represents the backend configuration that the model runs with.
     ///
     /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact
-    @JsonKey(name: 'system_fingerprint', includeIfNull: false)
-    String? systemFingerprint,
+    @JsonKey(name: 'system_fingerprint', includeIfNull: false) String? systemFingerprint,
 
     /// The object type, which is always `chat.completion.chunk`.
     @JsonKey(includeIfNull: false) String? object,
 
     /// Usage statistics for the completion request.
     @JsonKey(includeIfNull: false) CompletionUsage? usage,
+
+    /// The id on supabase of the assistant message response
+    @JsonKey(includeIfNull: false, name: 'assistant_message_id') String? assistantMessageId,
+
+    /// The id on supabase of the user message that triggered the ai response
+    @JsonKey(includeIfNull: false, name: 'user_message_id') String? userMessageId,
+
   }) = _CreateChatCompletionStreamResponse;
 
   /// Object construction from a JSON representation
-  factory CreateChatCompletionStreamResponse.fromJson(
-          Map<String, dynamic> json) =>
+  factory CreateChatCompletionStreamResponse.fromJson(Map<String, dynamic> json) =>
       _$CreateChatCompletionStreamResponseFromJson(json);
 
   /// List of all property names of schema
@@ -65,7 +69,8 @@ class CreateChatCompletionStreamResponse
     'service_tier',
     'system_fingerprint',
     'object',
-    'usage'
+    'usage',
+    'assistant_message_id',
   ];
 
   /// Perform validations on the schema property values

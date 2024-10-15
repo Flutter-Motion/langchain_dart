@@ -905,6 +905,8 @@ _$CreateChatCompletionStreamResponseImpl
           usage: json['usage'] == null
               ? null
               : CompletionUsage.fromJson(json['usage'] as Map<String, dynamic>),
+          assistantMessageId: json['assistant_message_id'] as String?,
+          userMessageId: json['user_message_id'] as String?,
         );
 
 Map<String, dynamic> _$$CreateChatCompletionStreamResponseImplToJson(
@@ -925,6 +927,8 @@ Map<String, dynamic> _$$CreateChatCompletionStreamResponseImplToJson(
   writeNotNull('system_fingerprint', instance.systemFingerprint);
   writeNotNull('object', instance.object);
   writeNotNull('usage', instance.usage?.toJson());
+  writeNotNull('assistant_message_id', instance.assistantMessageId);
+  writeNotNull('user_message_id', instance.userMessageId);
   return val;
 }
 
