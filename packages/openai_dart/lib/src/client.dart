@@ -36,12 +36,14 @@ class OpenAIClient extends g.OpenAIClient {
     final String? organization,
     final String? beta = 'assistants=v2',
     final String? baseUrl,
+    final String? path,
     final Map<String, String>? headers,
     final Map<String, dynamic>? queryParams,
     final http.Client? client,
   }) : super(
           bearerToken: apiKey ?? '',
           baseUrl: baseUrl,
+          path: path,
           headers: {
             if (organization != null) 'OpenAI-Organization': organization,
             if (beta != null) 'OpenAI-Beta': beta,

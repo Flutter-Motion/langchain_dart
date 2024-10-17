@@ -71,6 +71,7 @@ class OpenAIClient {
   OpenAIClient({
     this.bearerToken = '',
     this.baseUrl,
+    this.path,
     this.headers = const {},
     this.queryParams = const {},
     http.Client? client,
@@ -86,6 +87,9 @@ class OpenAIClient {
 
   /// Override base URL (default: server url defined in spec)
   final String? baseUrl;
+
+  /// Optional custom path that overrides the default server URL defined in the specification.
+  final String? path;
 
   /// Global headers to be sent with every request
   final Map<String, String> headers;
@@ -267,7 +271,7 @@ class OpenAIClient {
     String responseType = '',
     Object? body,
   }) async {
-    final uri = Uri.parse((this.baseUrl ?? baseUrl) + path);
+    final uri = Uri.parse((this.baseUrl ?? baseUrl) + (this.path ?? path));
     late http.StreamedResponse response;
     try {
       response = await _request(
