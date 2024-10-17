@@ -105,8 +105,7 @@ class OpenAIClient extends g.OpenAIClient {
     yield* r.stream
         .transform(const _OpenAIStreamTransformer()) //
         .map(
-          (final d) =>
-              CreateChatCompletionStreamResponse.fromJson(json.decode(d)),
+          (final d) => CreateChatCompletionStreamResponse.fromJson(json.decode(d)),
         );
   }
 
@@ -194,8 +193,7 @@ class OpenAIClient extends g.OpenAIClient {
   }
 }
 
-class _OpenAIStreamTransformer
-    extends StreamTransformerBase<List<int>, String> {
+class _OpenAIStreamTransformer extends StreamTransformerBase<List<int>, String> {
   const _OpenAIStreamTransformer();
 
   @override
@@ -208,17 +206,12 @@ class _OpenAIStreamTransformer
   }
 }
 
-class _OpenAIAssistantStreamTransformer
-    extends StreamTransformerBase<List<int>, AssistantStreamEvent> {
+class _OpenAIAssistantStreamTransformer extends StreamTransformerBase<List<int>, AssistantStreamEvent> {
   const _OpenAIAssistantStreamTransformer();
 
   @override
   Stream<AssistantStreamEvent> bind(final Stream<List<int>> stream) {
-    return stream
-        .transform(utf8.decoder)
-        .transform(const LineSplitter())
-        .transform(_PairwiseTransformer())
-        .map((final item) {
+    return stream.transform(utf8.decoder).transform(const LineSplitter()).transform(_PairwiseTransformer()).map((final item) {
       final (event, data) = item;
 
       Map<String, dynamic> getEventDataMap({final bool decode = true}) => {
@@ -266,8 +259,7 @@ class _OpenAIAssistantStreamTransformer
   }
 }
 
-class _PairwiseTransformer
-    extends StreamTransformerBase<String, (String, String)> {
+class _PairwiseTransformer extends StreamTransformerBase<String, (String, String)> {
   @override
   Stream<(String, String)> bind(final Stream<String> stream) {
     late StreamController<(String, String)> controller;
