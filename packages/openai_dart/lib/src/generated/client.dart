@@ -168,7 +168,7 @@ class OpenAIClient {
   }) async {
     // Override with the user provided baseUrl
     baseUrl = this.baseUrl ?? baseUrl;
-
+    path = this.path ?? path;
     // Ensure a baseUrl is provided
     assert(
       baseUrl.isNotEmpty,
@@ -328,7 +328,7 @@ class OpenAIClient {
     String responseType = '',
     Object? body,
   }) async {
-    final uri = Uri.parse((this.baseUrl ?? baseUrl) + path);
+    final uri = Uri.parse((this.baseUrl ?? baseUrl) + (this.path ?? path));
     late http.Response response;
     try {
       final streamedResponse = await _request(
