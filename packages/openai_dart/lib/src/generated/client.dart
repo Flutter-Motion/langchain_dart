@@ -73,6 +73,7 @@ class OpenAIClient {
     this.baseUrl,
     this.headers = const {},
     this.queryParams = const {},
+    this.path,
     http.Client? client,
   })  : assert(
           baseUrl == null || baseUrl.startsWith('http'),
@@ -86,6 +87,9 @@ class OpenAIClient {
 
   /// Override base URL (default: server url defined in spec)
   final String? baseUrl;
+
+  /// Override base URL (default: server url defined in spec)
+  final String? path;
 
   /// Global headers to be sent with every request
   final Map<String, String> headers;
