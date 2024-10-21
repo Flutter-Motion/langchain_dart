@@ -185,7 +185,7 @@ class OpenAIClient extends g.OpenAIClient {
       method: g.HttpMethod.post,
       requestType: 'application/json',
       responseType: 'application/json',
-      body: request,
+      body: request.copyWith(stream: true),
     );
     yield* r.stream.transform(const _OpenAIAssistantStreamTransformer());
   }
