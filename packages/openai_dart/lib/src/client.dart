@@ -112,6 +112,22 @@ class OpenAIClient extends g.OpenAIClient {
         );
   }
 
+  /// resume stream
+  Stream<CreateChatCompletionStreamResponse> resumeStream({
+    required String conversationId,
+  }) async* {
+    final r = await makeRequestStream(
+      baseUrl: 'https://api.openai.com/v1',
+      path: '/chat/stream/$conversationId',
+      method: g.HttpMethod.get,
+      requestType: 'application/json',
+      responseType: 'application/json',
+    );
+    yield* r.stream
+        .transform(const _OpenAIStreamTransformer()) //
+        .map((final d) =>
+            CreateChatCompletionStreamResponse.fromJson(json.decode(d)));
+  }
   // ------------------------------------------
   // METHOD: createThreadAndRunStream
   // ------------------------------------------
