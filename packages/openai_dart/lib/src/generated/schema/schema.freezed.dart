@@ -10001,6 +10001,10 @@ mixin _$CreateChatCompletionStreamResponse {
   @JsonKey(includeIfNull: false, name: 'user_message_id')
   String? get userMessageId => throw _privateConstructorUsedError;
 
+  /// Metadata from backend Response
+  @JsonKey(includeIfNull: false, name: 'metadata')
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+
   /// Serializes this CreateChatCompletionStreamResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
