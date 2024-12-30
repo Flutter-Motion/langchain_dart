@@ -10001,6 +10001,10 @@ mixin _$CreateChatCompletionStreamResponse {
   @JsonKey(includeIfNull: false, name: 'user_message_id')
   String? get userMessageId => throw _privateConstructorUsedError;
 
+  /// Metadata from backend Response
+  @JsonKey(includeIfNull: false, name: 'metadata')
+  Map<String, dynamic>? get metadata => throw _privateConstructorUsedError;
+
   /// Serializes this CreateChatCompletionStreamResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -10037,7 +10041,9 @@ abstract class $CreateChatCompletionStreamResponseCopyWith<$Res> {
       @JsonKey(includeIfNull: false, name: 'assistant_message_id')
       String? assistantMessageId,
       @JsonKey(includeIfNull: false, name: 'user_message_id')
-      String? userMessageId});
+      String? userMessageId,
+      @JsonKey(includeIfNull: false, name: 'metadata')
+      Map<String, dynamic>? metadata});
 
   $CompletionUsageCopyWith<$Res>? get usage;
 }
@@ -10068,6 +10074,7 @@ class _$CreateChatCompletionStreamResponseCopyWithImpl<$Res,
     Object? usage = freezed,
     Object? assistantMessageId = freezed,
     Object? userMessageId = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -10110,6 +10117,10 @@ class _$CreateChatCompletionStreamResponseCopyWithImpl<$Res,
           ? _value.userMessageId
           : userMessageId // ignore: cast_nullable_to_non_nullable
               as String?,
+      metadata: freezed == metadata
+          ? _value.metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -10154,7 +10165,9 @@ abstract class _$$CreateChatCompletionStreamResponseImplCopyWith<$Res>
       @JsonKey(includeIfNull: false, name: 'assistant_message_id')
       String? assistantMessageId,
       @JsonKey(includeIfNull: false, name: 'user_message_id')
-      String? userMessageId});
+      String? userMessageId,
+      @JsonKey(includeIfNull: false, name: 'metadata')
+      Map<String, dynamic>? metadata});
 
   @override
   $CompletionUsageCopyWith<$Res>? get usage;
@@ -10185,6 +10198,7 @@ class __$$CreateChatCompletionStreamResponseImplCopyWithImpl<$Res>
     Object? usage = freezed,
     Object? assistantMessageId = freezed,
     Object? userMessageId = freezed,
+    Object? metadata = freezed,
   }) {
     return _then(_$CreateChatCompletionStreamResponseImpl(
       id: freezed == id
@@ -10227,6 +10241,10 @@ class __$$CreateChatCompletionStreamResponseImplCopyWithImpl<$Res>
           ? _value.userMessageId
           : userMessageId // ignore: cast_nullable_to_non_nullable
               as String?,
+      metadata: freezed == metadata
+          ? _value._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -10252,8 +10270,11 @@ class _$CreateChatCompletionStreamResponseImpl
       @JsonKey(includeIfNull: false, name: 'assistant_message_id')
       this.assistantMessageId,
       @JsonKey(includeIfNull: false, name: 'user_message_id')
-      this.userMessageId})
+      this.userMessageId,
+      @JsonKey(includeIfNull: false, name: 'metadata')
+      final Map<String, dynamic>? metadata})
       : _choices = choices,
+        _metadata = metadata,
         super._();
 
   factory _$CreateChatCompletionStreamResponseImpl.fromJson(
@@ -10324,9 +10345,23 @@ class _$CreateChatCompletionStreamResponseImpl
   @JsonKey(includeIfNull: false, name: 'user_message_id')
   final String? userMessageId;
 
+  /// Metadata from backend Response
+  final Map<String, dynamic>? _metadata;
+
+  /// Metadata from backend Response
+  @override
+  @JsonKey(includeIfNull: false, name: 'metadata')
+  Map<String, dynamic>? get metadata {
+    final value = _metadata;
+    if (value == null) return null;
+    if (_metadata is EqualUnmodifiableMapView) return _metadata;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage, assistantMessageId: $assistantMessageId, userMessageId: $userMessageId)';
+    return 'CreateChatCompletionStreamResponse(id: $id, choices: $choices, created: $created, model: $model, serviceTier: $serviceTier, systemFingerprint: $systemFingerprint, object: $object, usage: $usage, assistantMessageId: $assistantMessageId, userMessageId: $userMessageId, metadata: $metadata)';
   }
 
   @override
@@ -10347,7 +10382,8 @@ class _$CreateChatCompletionStreamResponseImpl
             (identical(other.assistantMessageId, assistantMessageId) ||
                 other.assistantMessageId == assistantMessageId) &&
             (identical(other.userMessageId, userMessageId) ||
-                other.userMessageId == userMessageId));
+                other.userMessageId == userMessageId) &&
+            const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10363,7 +10399,8 @@ class _$CreateChatCompletionStreamResponseImpl
       object,
       usage,
       assistantMessageId,
-      userMessageId);
+      userMessageId,
+      const DeepCollectionEquality().hash(_metadata));
 
   /// Create a copy of CreateChatCompletionStreamResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -10386,23 +10423,26 @@ class _$CreateChatCompletionStreamResponseImpl
 abstract class _CreateChatCompletionStreamResponse
     extends CreateChatCompletionStreamResponse {
   const factory _CreateChatCompletionStreamResponse(
-      {@JsonKey(includeIfNull: false) final String? id,
-      required final List<ChatCompletionStreamResponseChoice> choices,
-      @JsonKey(includeIfNull: false) final int? created,
-      @JsonKey(includeIfNull: false) final String? model,
-      @JsonKey(
-          name: 'service_tier',
-          includeIfNull: false,
-          unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
-      final ServiceTier? serviceTier,
-      @JsonKey(name: 'system_fingerprint', includeIfNull: false)
-      final String? systemFingerprint,
-      @JsonKey(includeIfNull: false) final String? object,
-      @JsonKey(includeIfNull: false) final CompletionUsage? usage,
-      @JsonKey(includeIfNull: false, name: 'assistant_message_id')
-      final String? assistantMessageId,
-      @JsonKey(includeIfNull: false, name: 'user_message_id')
-      final String? userMessageId}) = _$CreateChatCompletionStreamResponseImpl;
+          {@JsonKey(includeIfNull: false) final String? id,
+          required final List<ChatCompletionStreamResponseChoice> choices,
+          @JsonKey(includeIfNull: false) final int? created,
+          @JsonKey(includeIfNull: false) final String? model,
+          @JsonKey(
+              name: 'service_tier',
+              includeIfNull: false,
+              unknownEnumValue: JsonKey.nullForUndefinedEnumValue)
+          final ServiceTier? serviceTier,
+          @JsonKey(name: 'system_fingerprint', includeIfNull: false)
+          final String? systemFingerprint,
+          @JsonKey(includeIfNull: false) final String? object,
+          @JsonKey(includeIfNull: false) final CompletionUsage? usage,
+          @JsonKey(includeIfNull: false, name: 'assistant_message_id')
+          final String? assistantMessageId,
+          @JsonKey(includeIfNull: false, name: 'user_message_id')
+          final String? userMessageId,
+          @JsonKey(includeIfNull: false, name: 'metadata')
+          final Map<String, dynamic>? metadata}) =
+      _$CreateChatCompletionStreamResponseImpl;
   const _CreateChatCompletionStreamResponse._() : super._();
 
   factory _CreateChatCompletionStreamResponse.fromJson(
@@ -10464,6 +10504,11 @@ abstract class _CreateChatCompletionStreamResponse
   @override
   @JsonKey(includeIfNull: false, name: 'user_message_id')
   String? get userMessageId;
+
+  /// Metadata from backend Response
+  @override
+  @JsonKey(includeIfNull: false, name: 'metadata')
+  Map<String, dynamic>? get metadata;
 
   /// Create a copy of CreateChatCompletionStreamResponse
   /// with the given fields replaced by the non-null parameter values.
