@@ -527,6 +527,12 @@ void main() {
                         'https://upload.wikimedia.org/wikipedia/commons/9/92/95apple.jpeg',
                   ),
                 ),
+                ChatCompletionMessageContentPart.video(
+                  videoUrl: ChatCompletionMessageVideoUrl(
+                    url:
+                        'https://ff50112422257af23f6bb0f9d26763a89477edb018250f9db3b1f5d-apidata.googleusercontent.com/download/storage/v1/b/ttd-dev-3a8f0.firebasestorage.app/o/feedback_video%2Fimagepicker4b946077b16d42e3851a484d50de8a85558130000046e9e8017b8trim_f6304d90-edbc-11ef-85d4-e7458b842634.MOV?jk=AVyuY3jBSCblQdtRLdpxLgnW0zn3I5JHQPw-0qPc21wsXpFq9cjz2rgfb7nepTjDZua0Ejj_d4z8qSmKJ0MzwBbNt3FSwBAH8muXiLhKda0tVfhIdTztWj1qBlx3SX1B15AsD6s7k9PXAaodwQjnEsU_0GUjIrLgOCHQCa0IExDsPorT8psru8psEfRLgZs2E0mTlODp1v4Ib_QGlDOhVrWmoipB602pJqBeWy_vvA3uGUcifhTBYd9Wxfe93Oj8M-sqSXN_j8ADe4OfRnnw9QSrathaadJSL6XTvZIJq9Ri7OTiQ4GOsLxgkHXaemXwH9Iz-0_MFt_eCBYSNzZw-LS0uH5dQ274nl1wcYm3IckJ4IN1dSE7qq5I6t_7RwnnXwoL1EACpD4beUDBcnDHnSWbKn66eSfHvSKBtzOAZe3_bxPmQemNyOqTajpHp9LDP6WTBfDZAa5FsYgEqsrpZRTe0NmJXMJneqm_196ubk_dua3w8hXdtg_ALnqt2p2IQyUyq-u8MnHTDkZFzpwJnCRb8T55vZo4d5SGZncdKX4MlF7SRGtE29Axo2tgrPHTNh2iwEMAdFrackqbLYAvGkJinO6W5KaNVEEC6vi8lMUNzLM1rZl6RNF641QulYh7ukVYg0MK-MPDdsbt8k9Is0DekwAQJsw2t9IiOIQkX0_Hh5yuDeU3w5b1lgBO0IbcQkQ4AyM-FmI9buXbS7LC79pIZs3sP34ZlOWK8G6V4POf07rg3tookltCmkbYEgYKGwkQ6PSR_5Dhx5mGcCQJV43ftdyBrpi01wSNx5WVqoav0t_3WHUrurqCnpe0lD9sC5mKijBp6QTW5F7YEacNqvWljbHiD4mFIXPtHiKbDn00Xiua1NTrs00SabOtHAd-FMQmxB0v0WucsVHYlz1CQP8PjKu4qMC0KMUV2fNEXDHMlT6cbp93mZmtfSApq5GPnln4YgQQCc5iO3lCbMtRNeceK6yPsR-h8Jl5zXH0kgmUzpkNv256cS5EeE_Ia1KGElGQDQ1GEsbmaRSxPVn0-8r0Jk8iL0E599KAHnRNXHCrjgth87wb28DsTAmgTZ5QEmY9tulD2YN3VS9jWJ6ufo6pV09HsrLVkR9_vvixH5qrw2HJdWedssbiOSWKVE4MoFUZIFg4dfv04VZlY1Z69OtIel3t9ijxvugHE7mka2HDAOaZUnYvKp_1MlMLTRCpVR4qnNxIarGdczdWP29Jn7uiJMmt1sPG0dFmZgIfZm_ARW0kr4cxkOZA7W-5auggxOo3ZaHhQCnVgJ_SNfV4nkzHUS2EK-Ssu2xTyZs&isca=1',
+                  ),
+                ),
               ],
             ),
           ),

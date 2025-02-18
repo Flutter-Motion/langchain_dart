@@ -57264,6 +57264,8 @@ ChatCompletionMessageContentPart _$ChatCompletionMessageContentPartFromJson(
       return ChatCompletionMessageContentPartText.fromJson(json);
     case 'image':
       return ChatCompletionMessageContentPartImage.fromJson(json);
+    case 'video':
+      return ChatCompletionMessageContentPartVideoUrl.fromJson(json);
     case 'refusal':
       return ChatCompletionMessageContentPartRefusal.fromJson(json);
 
@@ -57289,6 +57291,9 @@ mixin _$ChatCompletionMessageContentPart {
     required TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)
         image,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)
+        video,
     required TResult Function(
             ChatCompletionMessageContentPartType type, String refusal)
         refusal,
@@ -57301,6 +57306,9 @@ mixin _$ChatCompletionMessageContentPart {
     TResult? Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult? Function(
             ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
@@ -57313,6 +57321,9 @@ mixin _$ChatCompletionMessageContentPart {
     TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult Function(ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
     required TResult orElse(),
@@ -57323,6 +57334,8 @@ mixin _$ChatCompletionMessageContentPart {
     required TResult Function(ChatCompletionMessageContentPartText value) text,
     required TResult Function(ChatCompletionMessageContentPartImage value)
         image,
+    required TResult Function(ChatCompletionMessageContentPartVideoUrl value)
+        video,
     required TResult Function(ChatCompletionMessageContentPartRefusal value)
         refusal,
   }) =>
@@ -57331,6 +57344,7 @@ mixin _$ChatCompletionMessageContentPart {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChatCompletionMessageContentPartText value)? text,
     TResult? Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult? Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult? Function(ChatCompletionMessageContentPartRefusal value)? refusal,
   }) =>
       throw _privateConstructorUsedError;
@@ -57338,6 +57352,7 @@ mixin _$ChatCompletionMessageContentPart {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChatCompletionMessageContentPartText value)? text,
     TResult Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult Function(ChatCompletionMessageContentPartRefusal value)? refusal,
     required TResult orElse(),
   }) =>
@@ -57493,6 +57508,9 @@ class _$ChatCompletionMessageContentPartTextImpl
     required TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)
         image,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)
+        video,
     required TResult Function(
             ChatCompletionMessageContentPartType type, String refusal)
         refusal,
@@ -57508,6 +57526,9 @@ class _$ChatCompletionMessageContentPartTextImpl
     TResult? Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult? Function(
             ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
@@ -57523,6 +57544,9 @@ class _$ChatCompletionMessageContentPartTextImpl
     TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult Function(ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
     required TResult orElse(),
@@ -57539,6 +57563,8 @@ class _$ChatCompletionMessageContentPartTextImpl
     required TResult Function(ChatCompletionMessageContentPartText value) text,
     required TResult Function(ChatCompletionMessageContentPartImage value)
         image,
+    required TResult Function(ChatCompletionMessageContentPartVideoUrl value)
+        video,
     required TResult Function(ChatCompletionMessageContentPartRefusal value)
         refusal,
   }) {
@@ -57550,6 +57576,7 @@ class _$ChatCompletionMessageContentPartTextImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChatCompletionMessageContentPartText value)? text,
     TResult? Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult? Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult? Function(ChatCompletionMessageContentPartRefusal value)? refusal,
   }) {
     return text?.call(this);
@@ -57560,6 +57587,7 @@ class _$ChatCompletionMessageContentPartTextImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChatCompletionMessageContentPartText value)? text,
     TResult Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult Function(ChatCompletionMessageContentPartRefusal value)? refusal,
     required TResult orElse(),
   }) {
@@ -57723,6 +57751,9 @@ class _$ChatCompletionMessageContentPartImageImpl
     required TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)
         image,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)
+        video,
     required TResult Function(
             ChatCompletionMessageContentPartType type, String refusal)
         refusal,
@@ -57738,6 +57769,9 @@ class _$ChatCompletionMessageContentPartImageImpl
     TResult? Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult? Function(
             ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
@@ -57753,6 +57787,9 @@ class _$ChatCompletionMessageContentPartImageImpl
     TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult Function(ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
     required TResult orElse(),
@@ -57769,6 +57806,8 @@ class _$ChatCompletionMessageContentPartImageImpl
     required TResult Function(ChatCompletionMessageContentPartText value) text,
     required TResult Function(ChatCompletionMessageContentPartImage value)
         image,
+    required TResult Function(ChatCompletionMessageContentPartVideoUrl value)
+        video,
     required TResult Function(ChatCompletionMessageContentPartRefusal value)
         refusal,
   }) {
@@ -57780,6 +57819,7 @@ class _$ChatCompletionMessageContentPartImageImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChatCompletionMessageContentPartText value)? text,
     TResult? Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult? Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult? Function(ChatCompletionMessageContentPartRefusal value)? refusal,
   }) {
     return image?.call(this);
@@ -57790,6 +57830,7 @@ class _$ChatCompletionMessageContentPartImageImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChatCompletionMessageContentPartText value)? text,
     TResult Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult Function(ChatCompletionMessageContentPartRefusal value)? refusal,
     required TResult orElse(),
   }) {
@@ -57834,6 +57875,253 @@ abstract class ChatCompletionMessageContentPartImage
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChatCompletionMessageContentPartImageImplCopyWith<
           _$ChatCompletionMessageContentPartImageImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ChatCompletionMessageContentPartVideoUrlImplCopyWith<$Res>
+    implements $ChatCompletionMessageContentPartCopyWith<$Res> {
+  factory _$$ChatCompletionMessageContentPartVideoUrlImplCopyWith(
+          _$ChatCompletionMessageContentPartVideoUrlImpl value,
+          $Res Function(_$ChatCompletionMessageContentPartVideoUrlImpl) then) =
+      __$$ChatCompletionMessageContentPartVideoUrlImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {ChatCompletionMessageContentPartType type,
+      @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl});
+
+  $ChatCompletionMessageVideoUrlCopyWith<$Res> get videoUrl;
+}
+
+/// @nodoc
+class __$$ChatCompletionMessageContentPartVideoUrlImplCopyWithImpl<$Res>
+    extends _$ChatCompletionMessageContentPartCopyWithImpl<$Res,
+        _$ChatCompletionMessageContentPartVideoUrlImpl>
+    implements _$$ChatCompletionMessageContentPartVideoUrlImplCopyWith<$Res> {
+  __$$ChatCompletionMessageContentPartVideoUrlImplCopyWithImpl(
+      _$ChatCompletionMessageContentPartVideoUrlImpl _value,
+      $Res Function(_$ChatCompletionMessageContentPartVideoUrlImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChatCompletionMessageContentPart
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? videoUrl = null,
+  }) {
+    return _then(_$ChatCompletionMessageContentPartVideoUrlImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChatCompletionMessageContentPartType,
+      videoUrl: null == videoUrl
+          ? _value.videoUrl
+          : videoUrl // ignore: cast_nullable_to_non_nullable
+              as ChatCompletionMessageVideoUrl,
+    ));
+  }
+
+  /// Create a copy of ChatCompletionMessageContentPart
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ChatCompletionMessageVideoUrlCopyWith<$Res> get videoUrl {
+    return $ChatCompletionMessageVideoUrlCopyWith<$Res>(_value.videoUrl,
+        (value) {
+      return _then(_value.copyWith(videoUrl: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatCompletionMessageContentPartVideoUrlImpl
+    extends ChatCompletionMessageContentPartVideoUrl {
+  const _$ChatCompletionMessageContentPartVideoUrlImpl(
+      {this.type = ChatCompletionMessageContentPartType.videoUrl,
+      @JsonKey(name: 'video_url') required this.videoUrl})
+      : super._();
+
+  factory _$ChatCompletionMessageContentPartVideoUrlImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ChatCompletionMessageContentPartVideoUrlImplFromJson(json);
+
+  /// The type of the content part, in this case `video_url`.
+  @override
+  @JsonKey()
+  final ChatCompletionMessageContentPartType type;
+
+  /// The URL of the video.
+  @override
+  @JsonKey(name: 'video_url')
+  final ChatCompletionMessageVideoUrl videoUrl;
+
+  @override
+  String toString() {
+    return 'ChatCompletionMessageContentPart.video(type: $type, videoUrl: $videoUrl)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatCompletionMessageContentPartVideoUrlImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.videoUrl, videoUrl) ||
+                other.videoUrl == videoUrl));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, videoUrl);
+
+  /// Create a copy of ChatCompletionMessageContentPart
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatCompletionMessageContentPartVideoUrlImplCopyWith<
+          _$ChatCompletionMessageContentPartVideoUrlImpl>
+      get copyWith =>
+          __$$ChatCompletionMessageContentPartVideoUrlImplCopyWithImpl<
+              _$ChatCompletionMessageContentPartVideoUrlImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            ChatCompletionMessageContentPartType type, String text)
+        text,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)
+        image,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)
+        video,
+    required TResult Function(
+            ChatCompletionMessageContentPartType type, String refusal)
+        refusal,
+  }) {
+    return video(type, videoUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(ChatCompletionMessageContentPartType type, String text)?
+        text,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
+        image,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
+    TResult? Function(
+            ChatCompletionMessageContentPartType type, String refusal)?
+        refusal,
+  }) {
+    return video?.call(type, videoUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(ChatCompletionMessageContentPartType type, String text)?
+        text,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
+        image,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
+    TResult Function(ChatCompletionMessageContentPartType type, String refusal)?
+        refusal,
+    required TResult orElse(),
+  }) {
+    if (video != null) {
+      return video(type, videoUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChatCompletionMessageContentPartText value) text,
+    required TResult Function(ChatCompletionMessageContentPartImage value)
+        image,
+    required TResult Function(ChatCompletionMessageContentPartVideoUrl value)
+        video,
+    required TResult Function(ChatCompletionMessageContentPartRefusal value)
+        refusal,
+  }) {
+    return video(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ChatCompletionMessageContentPartText value)? text,
+    TResult? Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult? Function(ChatCompletionMessageContentPartVideoUrl value)? video,
+    TResult? Function(ChatCompletionMessageContentPartRefusal value)? refusal,
+  }) {
+    return video?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChatCompletionMessageContentPartText value)? text,
+    TResult Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult Function(ChatCompletionMessageContentPartVideoUrl value)? video,
+    TResult Function(ChatCompletionMessageContentPartRefusal value)? refusal,
+    required TResult orElse(),
+  }) {
+    if (video != null) {
+      return video(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatCompletionMessageContentPartVideoUrlImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class ChatCompletionMessageContentPartVideoUrl
+    extends ChatCompletionMessageContentPart {
+  const factory ChatCompletionMessageContentPartVideoUrl(
+          {final ChatCompletionMessageContentPartType type,
+          @JsonKey(name: 'video_url')
+          required final ChatCompletionMessageVideoUrl videoUrl}) =
+      _$ChatCompletionMessageContentPartVideoUrlImpl;
+  const ChatCompletionMessageContentPartVideoUrl._() : super._();
+
+  factory ChatCompletionMessageContentPartVideoUrl.fromJson(
+          Map<String, dynamic> json) =
+      _$ChatCompletionMessageContentPartVideoUrlImpl.fromJson;
+
+  /// The type of the content part, in this case `video_url`.
+  @override
+  ChatCompletionMessageContentPartType get type;
+
+  /// The URL of the video.
+  @JsonKey(name: 'video_url')
+  ChatCompletionMessageVideoUrl get videoUrl;
+
+  /// Create a copy of ChatCompletionMessageContentPart
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatCompletionMessageContentPartVideoUrlImplCopyWith<
+          _$ChatCompletionMessageContentPartVideoUrlImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -57940,6 +58228,9 @@ class _$ChatCompletionMessageContentPartRefusalImpl
     required TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)
         image,
+    required TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)
+        video,
     required TResult Function(
             ChatCompletionMessageContentPartType type, String refusal)
         refusal,
@@ -57955,6 +58246,9 @@ class _$ChatCompletionMessageContentPartRefusalImpl
     TResult? Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult? Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult? Function(
             ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
@@ -57970,6 +58264,9 @@ class _$ChatCompletionMessageContentPartRefusalImpl
     TResult Function(ChatCompletionMessageContentPartType type,
             @JsonKey(name: 'image_url') ChatCompletionMessageImageUrl imageUrl)?
         image,
+    TResult Function(ChatCompletionMessageContentPartType type,
+            @JsonKey(name: 'video_url') ChatCompletionMessageVideoUrl videoUrl)?
+        video,
     TResult Function(ChatCompletionMessageContentPartType type, String refusal)?
         refusal,
     required TResult orElse(),
@@ -57986,6 +58283,8 @@ class _$ChatCompletionMessageContentPartRefusalImpl
     required TResult Function(ChatCompletionMessageContentPartText value) text,
     required TResult Function(ChatCompletionMessageContentPartImage value)
         image,
+    required TResult Function(ChatCompletionMessageContentPartVideoUrl value)
+        video,
     required TResult Function(ChatCompletionMessageContentPartRefusal value)
         refusal,
   }) {
@@ -57997,6 +58296,7 @@ class _$ChatCompletionMessageContentPartRefusalImpl
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ChatCompletionMessageContentPartText value)? text,
     TResult? Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult? Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult? Function(ChatCompletionMessageContentPartRefusal value)? refusal,
   }) {
     return refusal?.call(this);
@@ -58007,6 +58307,7 @@ class _$ChatCompletionMessageContentPartRefusalImpl
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ChatCompletionMessageContentPartText value)? text,
     TResult Function(ChatCompletionMessageContentPartImage value)? image,
+    TResult Function(ChatCompletionMessageContentPartVideoUrl value)? video,
     TResult Function(ChatCompletionMessageContentPartRefusal value)? refusal,
     required TResult orElse(),
   }) {
@@ -58049,6 +58350,173 @@ abstract class ChatCompletionMessageContentPartRefusal
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ChatCompletionMessageContentPartRefusalImplCopyWith<
           _$ChatCompletionMessageContentPartRefusalImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+ChatCompletionMessageVideoUrl _$ChatCompletionMessageVideoUrlFromJson(
+    Map<String, dynamic> json) {
+  return _ChatCompletionMessageVideoUrl.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ChatCompletionMessageVideoUrl {
+  /// Either a URL of the video or the base64 encoded video data.
+  String get url => throw _privateConstructorUsedError;
+
+  /// Serializes this ChatCompletionMessageVideoUrl to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ChatCompletionMessageVideoUrl
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ChatCompletionMessageVideoUrlCopyWith<ChatCompletionMessageVideoUrl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ChatCompletionMessageVideoUrlCopyWith<$Res> {
+  factory $ChatCompletionMessageVideoUrlCopyWith(
+          ChatCompletionMessageVideoUrl value,
+          $Res Function(ChatCompletionMessageVideoUrl) then) =
+      _$ChatCompletionMessageVideoUrlCopyWithImpl<$Res,
+          ChatCompletionMessageVideoUrl>;
+  @useResult
+  $Res call({String url});
+}
+
+/// @nodoc
+class _$ChatCompletionMessageVideoUrlCopyWithImpl<$Res,
+        $Val extends ChatCompletionMessageVideoUrl>
+    implements $ChatCompletionMessageVideoUrlCopyWith<$Res> {
+  _$ChatCompletionMessageVideoUrlCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ChatCompletionMessageVideoUrl
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+  }) {
+    return _then(_value.copyWith(
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ChatCompletionMessageVideoUrlImplCopyWith<$Res>
+    implements $ChatCompletionMessageVideoUrlCopyWith<$Res> {
+  factory _$$ChatCompletionMessageVideoUrlImplCopyWith(
+          _$ChatCompletionMessageVideoUrlImpl value,
+          $Res Function(_$ChatCompletionMessageVideoUrlImpl) then) =
+      __$$ChatCompletionMessageVideoUrlImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String url});
+}
+
+/// @nodoc
+class __$$ChatCompletionMessageVideoUrlImplCopyWithImpl<$Res>
+    extends _$ChatCompletionMessageVideoUrlCopyWithImpl<$Res,
+        _$ChatCompletionMessageVideoUrlImpl>
+    implements _$$ChatCompletionMessageVideoUrlImplCopyWith<$Res> {
+  __$$ChatCompletionMessageVideoUrlImplCopyWithImpl(
+      _$ChatCompletionMessageVideoUrlImpl _value,
+      $Res Function(_$ChatCompletionMessageVideoUrlImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChatCompletionMessageVideoUrl
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? url = null,
+  }) {
+    return _then(_$ChatCompletionMessageVideoUrlImpl(
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ChatCompletionMessageVideoUrlImpl
+    extends _ChatCompletionMessageVideoUrl {
+  const _$ChatCompletionMessageVideoUrlImpl({required this.url}) : super._();
+
+  factory _$ChatCompletionMessageVideoUrlImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ChatCompletionMessageVideoUrlImplFromJson(json);
+
+  /// Either a URL of the video or the base64 encoded video data.
+  @override
+  final String url;
+
+  @override
+  String toString() {
+    return 'ChatCompletionMessageVideoUrl(url: $url)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ChatCompletionMessageVideoUrlImpl &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, url);
+
+  /// Create a copy of ChatCompletionMessageVideoUrl
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ChatCompletionMessageVideoUrlImplCopyWith<
+          _$ChatCompletionMessageVideoUrlImpl>
+      get copyWith => __$$ChatCompletionMessageVideoUrlImplCopyWithImpl<
+          _$ChatCompletionMessageVideoUrlImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ChatCompletionMessageVideoUrlImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ChatCompletionMessageVideoUrl
+    extends ChatCompletionMessageVideoUrl {
+  const factory _ChatCompletionMessageVideoUrl({required final String url}) =
+      _$ChatCompletionMessageVideoUrlImpl;
+  const _ChatCompletionMessageVideoUrl._() : super._();
+
+  factory _ChatCompletionMessageVideoUrl.fromJson(Map<String, dynamic> json) =
+      _$ChatCompletionMessageVideoUrlImpl.fromJson;
+
+  /// Either a URL of the video or the base64 encoded video data.
+  @override
+  String get url;
+
+  /// Create a copy of ChatCompletionMessageVideoUrl
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChatCompletionMessageVideoUrlImplCopyWith<
+          _$ChatCompletionMessageVideoUrlImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

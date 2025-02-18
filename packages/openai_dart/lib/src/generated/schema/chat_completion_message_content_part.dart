@@ -42,6 +42,17 @@ sealed class ChatCompletionMessageContentPart
     @JsonKey(name: 'image_url') required ChatCompletionMessageImageUrl imageUrl,
   }) = ChatCompletionMessageContentPartImage;
 
+
+
+  const factory ChatCompletionMessageContentPart.video({
+    /// The type of the content part, in this case `video_url`.
+    @Default(ChatCompletionMessageContentPartType.videoUrl)
+    ChatCompletionMessageContentPartType type,
+
+    /// The URL of the video.
+    @JsonKey(name: 'video_url') required ChatCompletionMessageVideoUrl videoUrl,
+  }) = ChatCompletionMessageContentPartVideoUrl;
+
   // ------------------------------------------
   // UNION: ChatCompletionMessageContentPartRefusal
   // ------------------------------------------
@@ -73,7 +84,48 @@ enum ChatCompletionMessageContentPartEnumType {
   imageUrl,
   @JsonValue('refusal')
   refusal,
+
+  @JsonValue('video_url')
+  videoUrl,
 }
+
+
+/// ==========================================
+/// CLASS: ChatCompletionMessageVideoUrl
+/// ==========================================
+///
+/// The URL of the video.
+
+@freezed
+class ChatCompletionMessageVideoUrl with _$ChatCompletionMessageVideoUrl {
+  const ChatCompletionMessageVideoUrl._();
+
+  /// Factory constructor for ChatCompletionMessageVideoUrl
+  const factory ChatCompletionMessageVideoUrl({
+    /// Either a URL of the video or the base64 encoded video data.
+    required String url,
+  }) = _ChatCompletionMessageVideoUrl;
+
+  /// Object construction from a JSON representation
+  factory ChatCompletionMessageVideoUrl.fromJson(Map<String, dynamic> json) =>
+      _$ChatCompletionMessageVideoUrlFromJson(json);
+
+  /// List of all property names of schema
+  static const List<String> propertyNames = ['url'];
+
+  /// Perform validations on the schema property values
+  String? validateSchema() {
+    return null;
+  }
+
+  /// Map representation of object (not serialized)
+  Map<String, dynamic> toMap() {
+    return {
+      'url': url,
+    };
+  }
+}
+
 
 // ==========================================
 // CLASS: ChatCompletionMessageImageUrl
@@ -114,6 +166,7 @@ class ChatCompletionMessageImageUrl with _$ChatCompletionMessageImageUrl {
     };
   }
 }
+
 
 // ==========================================
 // ENUM: ChatCompletionMessageImageDetail
