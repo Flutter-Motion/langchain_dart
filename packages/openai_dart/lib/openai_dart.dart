@@ -3,5 +3,5 @@ library;
 
 export 'src/client.dart';
 export 'src/extensions.dart';
-export 'src/generated/client.dart' show OpenAIClientException;
+export 'src/generated/client.dart' show HttpMethod,OpenAIClientException;
 export 'src/generated/schema/schema.dart';
