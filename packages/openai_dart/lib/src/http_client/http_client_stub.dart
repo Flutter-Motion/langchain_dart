@@ -1,4 +1,4 @@
-import 'package:http/http.dart' as http;
+import 'http_client_with_cupertino.dart' as http;
 
 /// Creates a default HTTP client for the current platform.
 http.Client createDefaultHttpClient() => throw UnsupportedError(

@@ -2,11 +2,10 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
 import 'generated/client.dart' as g;
 import 'generated/schema/schema.dart';
 import 'http_client/http_client.dart';
+import 'http_client/http_client_with_cupertino.dart' as http;
 
 /// Client for OpenAI API.
 ///

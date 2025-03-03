@@ -1,9 +1,10 @@
-import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
+
+import 'http_client_with_cupertino.dart' as http;
 
 /// Creates an IOClient with a retry policy.
 http.Client createDefaultHttpClient() {
-  return RetryClient(http.Client());
+  return RetryClient(http.getClient());
 }
 
 /// Middleware for HTTP requests.

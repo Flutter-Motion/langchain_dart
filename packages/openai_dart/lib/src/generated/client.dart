@@ -6,7 +6,9 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:http/http.dart' as http;
+
+import '../http_client/http_client_with_cupertino.dart' as http;
+
 import 'package:http/retry.dart';
 import 'package:meta/meta.dart';
 
