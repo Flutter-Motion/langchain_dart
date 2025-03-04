@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:cupertino_http/cupertino_http.dart';
@@ -26,9 +25,10 @@ http.Client getClient() {
     client = CupertinoClient.fromSessionConfiguration(config);
   } else {
     final httpClient = HttpClient()
+      ..maxConnectionsPerHost = 20
+      ..idleTimeout = const Duration(seconds: 60)
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
-    httpClient.maxConnectionsPerHost = 20;
 
     client = IOClient(httpClient);
   }
